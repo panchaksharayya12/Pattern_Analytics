@@ -1,0 +1,32 @@
+# Virtual Environment
+.venv/
+env/
+venv/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Operating System & Office Temporary Files
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment Variables & Secrets
+.env
+.env.local
+
+# Scratch & Temporary Logs
+scratch/
+*.log
+html_test.py

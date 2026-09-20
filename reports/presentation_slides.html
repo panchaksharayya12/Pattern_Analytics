@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Analytics - Executive Presentation Deck | Panchaksharayya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #030712;
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Slide Stage Container */
+        .stage {
+            width: 92vw;
+            max-width: 1280px;
+            aspect-ratio: 16 / 9;
+            background: radial-gradient(circle at 85% 12%, rgba(26, 54, 93, 0.35) 0%, transparent 55%),
+                        radial-gradient(circle at 10% 35%, rgba(13, 37, 68, 0.3) 0%, transparent 45%),
+                        #070d1e;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 3.2rem 4rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Header Stripe */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 1.2rem;
+        }
+
+        .slide-badge {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #38bdf8;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .slide-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .slide-meta {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .slide-meta strong {
+            color: #38bdf8;
+        }
+
+        /* Content Area */
+        .slide-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Card Layouts */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(9, 14, 26, 0.85) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 14px;
+            padding: 1.6rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            border-radius: 2px;
+        }
+
+        .card.cyan::before { background: linear-gradient(90deg, #38bdf8, transparent); }
+        .card.rose::before { background: linear-gradient(90deg, #f43f5e, transparent); }
+        .card.amber::before { background: linear-gradient(90deg, #f59e0b, transparent); }
+        .card.purple::before { background: linear-gradient(90deg, #a855f7, transparent); }
+
+        .card-label {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 0.6rem;
+        }
+
+        .card-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 0.6rem;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        /* Slide Footer */
+        .slide-footer {
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        /* Navigation Controls */
+        .controls {
+            margin-top: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #ffffff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #0284c7;
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+        }
+
+        .progress-indicator {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #94a3b8;
+        }
+
+        /* Slide Visibilities */
+        .slide {
+            display: none;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        .slide.active {
+            display: flex;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.99); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .author-box {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid #38bdf8;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide Stage -->
+    <div class="stage">
+
+        <!-- SLIDE 1: TITLE -->
+        <div class="slide active" id="slide-1">
+            <div class="slide-body" style="justify-content: center; text-align: left;">
+                <div class="slide-badge">EUROPEAN BANKING INTELLIGENCE & CAPITAL RISK</div>
+                <h1 style="font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 1rem;">
+                    Customer Segmentation &<br>
+                    <span style="font-family: 'Playfair Display', serif; font-style: italic; color: #7dd3fc;">Churn Pattern Analytics</span>
+                </h1>
+                <p style="font-size: 1.25rem; color: #94a3b8; max-width: 850px; line-height: 1.6;">
+                    An Empirical Investigation of Behavioral Gradients, Capital Flight, and Cross-Market Disparities Across 10,000 Retail Banking Accounts in France, Germany, and Spain.
+                </p>
+
+                <div class="author-box">
+                    <div style="font-size: 0.8rem; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 1.5px;">Researcher & Project Architect</div>
+                    <div style="font-size: 1.6rem; font-weight: 800; color: #ffffff; margin: 4px 0;">Panchaksharayya</div>
+                    <div style="font-size: 0.95rem; color: #cbd5e1;">
+                        B.Tech Student, Information Technology (Specialization: Augmented Reality & Virtual Reality)<br>
+                        <strong>Email:</strong> panchaksharayyas22@gmail.com &nbsp;|&nbsp; <strong>Focus:</strong> Quantitative Banking Analytics & Visual Intelligence
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Executive Presentation</div>
+                <div>Slide 1 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: EXECUTIVE SUMMARY -->
+        <div class="slide" id="slide-2">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">EXECUTIVE SUMMARY</div>
+                    <div class="slide-title">The Modern Banking Retention Imperative</div>
+                </div>
+                <div class="slide-meta">Platform: <strong>Pattern Analytics</strong><br>Dataset: 10,000 Accounts</div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-4">
+                    <div class="card rose">
+                        <div class="card-label">The Problem</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #f43f5e; margin-bottom: 0.6rem;">High Replacement Cost</div>
+                        <div class="card-desc">Losing existing depositors destroys customer lifetime value (LTV). Acquiring a replacement retail client costs 5x–7x more than retention.</div>
+                    </div>
+                    <div class="card cyan">
+                        <div class="card-label">The Analytics</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #38bdf8; margin-bottom: 0.6rem;">Multi-Axis Segmentation</div>
+                        <div class="card-desc">Empirical segmentation across 10,000 accounts across France, Germany, and Spain, evaluating 14 demographic, financial, and activity signals.</div>
+                    </div>
+                    <div class="card amber">
+                        <div class="card-label">Key Discoveries</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #fbbf24; margin-bottom: 0.6rem;">Four Critical Hazards</div>
+                        <div class="card-desc">German Anomaly (32.4% churn), Age 46–60 Peak (56.2% churn), Product Cliff (82.7% churn on 3+), and the €185.6M Wealth Paradox.</div>
+                    </div>
+                    <div class="card purple">
+                        <div class="card-label">Production Delivery</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #c084fc; margin-bottom: 0.6rem;">End-to-End System</div>
+                        <div class="card-desc">Interactive dark-mode Streamlit dashboard, modular Python analytic engine, and automated operational retention playbooks.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 2 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: BUSINESS PROBLEM -->
+        <div class="slide" id="slide-3">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">BUSINESS ECONOMICS</div>
+                    <div class="slide-title">Acquisition Asymmetry vs. Liquidity Runoff</div>
+                </div>
+                <div class="slide-meta">Institutional Focus: <strong>Basel III Capital Coverage</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card rose">
+                        <div class="card-label">The Customer Acquisition Penalty</div>
+                        <div style="font-size: 1.4rem; font-weight: 800; color: #f43f5e; margin: 0.5rem 0;">5x to 7x Cost Multiple</div>
+                        <div class="card-desc" style="font-size: 0.95rem; line-height: 1.6;">
+                            • In Western European banking, replacing a departing depositor requires €400–€600 in marketing and onboarding expense.<br>
+                            • New retail accounts take 18–24 months of steady transactional velocity just to amortize customer acquisition costs (CAC).<br>
+                            • Open banking protocols and automated switching services under PSD2 have completely eroded traditional procedural switching barriers.
+                        </div>
+                    </div>
+                    <div class="card amber">
+                        <div class="card-label">Balance Sheet & Liquidity Impact</div>
+                        <div style="font-size: 1.4rem; font-weight: 800; color: #fbbf24; margin: 0.5rem 0;">Basel III Core Deposit Flight</div>
+                        <div class="card-desc" style="font-size: 0.95rem; line-height: 1.6;">
+                            • Retail deposits represent the cheapest, most stable tier of capital under Basel III Liquidity Coverage Ratios (LCR).<br>
+                            • When affluent customers churn, core deposits vanish, forcing treasury teams to tap volatile wholesale repo borrowings at 350+ bps higher spreads.<br>
+                            • Retention is fundamentally a treasury solvency and net interest margin preservation strategy.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 3 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: EXECUTIVE SCORECARD -->
+        <div class="slide" id="slide-4">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">PORTFOLIO BENCHMARK</div>
+                    <div class="slide-title">Executive Scorecard: 10,000 European Accounts</div>
+                </div>
+                <div class="slide-meta">Data Scope: <strong>France, Germany, Spain</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-4">
+                    <div class="card cyan">
+                        <div class="card-label">Analyzed Portfolio</div>
+                        <div class="card-value">10,000</div>
+                        <div class="card-desc">Standardized European microdata customer accounts</div>
+                    </div>
+                    <div class="card rose">
+                        <div class="card-label">Portfolio Churn Rate</div>
+                        <div class="card-value">20.37%</div>
+                        <div class="card-desc">2,037 accounts completely defected from the bank</div>
+                    </div>
+                    <div class="card amber">
+                        <div class="card-label">High-Value Churn</div>
+                        <div class="card-value">28.67%</div>
+                        <div class="card-desc">+8.30% higher than portfolio baseline rate</div>
+                    </div>
+                    <div class="card purple">
+                        <div class="card-label">Liquidated Capital</div>
+                        <div class="card-value">€185.6M</div>
+                        <div class="card-desc">Total balance exposure lost to competing institutions</div>
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 1.5rem; background: rgba(15, 23, 42, 0.6); border-color: rgba(56, 189, 248, 0.3);">
+                    <div style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">
+                        <strong style="color: #38bdf8;">Architectural Finding:</strong> Churn is acutely concentrated. 691 High-Value Customers accounted for <strong>€83.38 Million</strong> (44.9%) of all lost balances. Losing a single top-tier account holder causes financial harm equivalent to losing 12 mass-market accounts.
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 4 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: GEOGRAPHIC DIVERGENCE -->
+        <div class="slide" id="slide-5">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">GEOGRAPHIC RISK</div>
+                    <div class="slide-title">Geographic Divergence: The German Anomaly</div>
+                </div>
+                <div class="slide-meta">Metric: <strong>Geographic Risk Index (GRI)</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-3">
+                    <div class="card cyan">
+                        <div class="card-label">France (Core Base)</div>
+                        <div class="card-value">16.15%</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: #38bdf8; margin-bottom: 0.5rem;">GRI: 0.79 · Low Risk</div>
+                        <div class="card-desc">5,014 accounts (50.1% of portfolio). Highest relationship stability and tolerance for transactional fees.</div>
+                    </div>
+                    <div class="card rose">
+                        <div class="card-label">Germany (Critical Hazard)</div>
+                        <div class="card-value">32.44%</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: #f43f5e; margin-bottom: 0.5rem;">GRI: 1.59 · Severe Risk</div>
+                        <div class="card-desc">2,509 accounts. Exactly double the French churn rate. German depositors are hypersensitive to deposit yields and neobank features.</div>
+                    </div>
+                    <div class="card amber">
+                        <div class="card-label">Spain (Stable Periphery)</div>
+                        <div class="card-value">16.67%</div>
+                        <div style="font-size: 0.95rem; font-weight: 700; color: #fbbf24; margin-bottom: 0.5rem;">GRI: 0.82 · Low Risk</div>
+                        <div class="card-desc">2,477 accounts. Closely mirrors France. Retained clients maintain strong local branch and advisor ties.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 5 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: DEMOGRAPHIC RISK GRADIENTS -->
+        <div class="slide" id="slide-6">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">DEMOGRAPHIC ANALYSIS</div>
+                    <div class="slide-title">Demographic Gradients: The Age 46–60 Hazard Peak</div>
+                </div>
+                <div class="slide-meta">Model: <strong>Non-Linear Life-Cycle Hazard</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-4">
+                    <div class="card cyan">
+                        <div class="card-label">< 30 Years</div>
+                        <div class="card-value">7.52%</div>
+                        <div style="font-weight: 700; color: #38bdf8; margin-bottom: 0.4rem;">Digital Starters</div>
+                        <div class="card-desc">Lowest attrition. Low balance, but high long-term lifetime value potential.</div>
+                    </div>
+                    <div class="card amber">
+                        <div class="card-label">30–45 Years</div>
+                        <div class="card-value">14.99%</div>
+                        <div style="font-weight: 700; color: #fbbf24; margin-bottom: 0.4rem;">Borrowing Core</div>
+                        <div class="card-desc">Mortgages and payroll accounts provide strong procedural switching barriers.</div>
+                    </div>
+                    <div class="card rose">
+                        <div class="card-label">46–60 Years</div>
+                        <div class="card-value">56.21%</div>
+                        <div style="font-weight: 700; color: #f43f5e; margin-bottom: 0.4rem;">CRITICAL HAZARD</div>
+                        <div class="card-desc">Peak wealth accumulation. Over 1 in 2 accounts defect due to lack of private wealth advisory.</div>
+                    </div>
+                    <div class="card purple">
+                        <div class="card-label">60+ Years</div>
+                        <div class="card-value">21.26%</div>
+                        <div style="font-weight: 700; color: #c084fc; margin-bottom: 0.4rem;">Retirees</div>
+                        <div class="card-desc">Capital preservation focus; moderate churn driven by wealth transfer to heirs.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 6 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: PRODUCT BUNDLING PARADOX -->
+        <div class="slide" id="slide-7">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">PRODUCT STRATEGY</div>
+                    <div class="slide-title">The Cross-Selling Paradox: 2 Products Optimal, 3+ Cliff</div>
+                </div>
+                <div class="slide-meta">Metric: <strong>NumOfProducts vs. Churn Rate</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-4">
+                    <div class="card amber">
+                        <div class="card-label">1 Product</div>
+                        <div class="card-value">27.71%</div>
+                        <div class="card-desc">Single-service transactional exposure. Low relational lock-in.</div>
+                    </div>
+                    <div class="card cyan">
+                        <div class="card-label">2 Products</div>
+                        <div class="card-value" style="color: #38bdf8;">7.58%</div>
+                        <div class="card-desc"><strong>THE SWEET SPOT:</strong> Maximum retention anchor. Synergy between checking & savings/credit.</div>
+                    </div>
+                    <div class="card rose">
+                        <div class="card-label">3 Products</div>
+                        <div class="card-value" style="color: #f43f5e;">82.71%</div>
+                        <div class="card-desc"><strong>PRODUCT FATIGUE:</strong> Fee compounding, service friction, and administrative overhead.</div>
+                    </div>
+                    <div class="card rose">
+                        <div class="card-label">4 Products</div>
+                        <div class="card-value" style="color: #f43f5e;">100.0%</div>
+                        <div class="card-desc"><strong>TOTAL DEFECTION:</strong> 60 out of 60 accounts closed. Complete product failure.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 7 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: THE WEALTH PARADOX -->
+        <div class="slide" id="slide-8">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">FINANCIAL EXPOSURE</div>
+                    <div class="slide-title">The Wealth Paradox: Churners Hold 25.2% Higher Balances</div>
+                </div>
+                <div class="slide-meta">Comparison: <strong>Mean Account Ledger Balances</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card rose">
+                        <div class="card-label">Churned Depositor Profile</div>
+                        <div class="card-value" style="font-size: 2.8rem; color: #f43f5e;">€91,108</div>
+                        <div class="card-desc" style="font-size: 1rem; line-height: 1.6;">
+                            • High-balance depositors have the highest sensitivity to yields and modern digital tooling.<br>
+                            • Total balance lost: <strong>€185,588,098</strong> across 2,037 closed relationships.<br>
+                            • Germany represents the highest capital loss density (€119.7K avg balance).
+                        </div>
+                    </div>
+                    <div class="card cyan">
+                        <div class="card-label">Retained Depositor Profile</div>
+                        <div class="card-value" style="font-size: 2.8rem; color: #38bdf8;">€72,745</div>
+                        <div class="card-desc" style="font-size: 1rem; line-height: 1.6;">
+                            • Retained customers hold €18,363 lower balance on average (-25.2%).<br>
+                            • Heavily diluted by 3,500+ zero-balance transactional accounts in France and Spain.<br>
+                            • <strong>Strategic Vulnerability:</strong> The bank retains low-margin volume while affluent capital exits.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 8 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: BEHAVIORAL ENGAGEMENT -->
+        <div class="slide" id="slide-9">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">BEHAVIORAL SIGNALS</div>
+                    <div class="slide-title">Engagement Signals: Active vs. Inactive Accounts</div>
+                </div>
+                <div class="slide-meta">Metric: <strong>IsActiveMember Indicator</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card rose">
+                        <div class="card-label">Inactive Accounts (IsActiveMember = 0)</div>
+                        <div class="card-value" style="font-size: 2.8rem; color: #f43f5e;">26.85%</div>
+                        <div class="card-desc" style="font-size: 1rem; line-height: 1.6;">
+                            • Inactive depositors are <strong>88% more likely to defect</strong> than active peers.<br>
+                            • Account dormancy is the most powerful behavioral precursor to account closure.<br>
+                            • Depositors typically stop logging in or swiping cards 60 to 90 days before formally switching banks.
+                        </div>
+                    </div>
+                    <div class="card cyan">
+                        <div class="card-label">Active Accounts (IsActiveMember = 1)</div>
+                        <div class="card-value" style="font-size: 2.8rem; color: #38bdf8;">14.27%</div>
+                        <div class="card-desc" style="font-size: 1rem; line-height: 1.6;">
+                            • Digital engagement creates a powerful behavioral shield against competitor acquisition.<br>
+                            • Features like automated bill pay, daily notifications, and mobile app interactions drastically reduce churn.<br>
+                            • Early warning rule: Trigger proactive customer outreach upon 30 days of zero login activity.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 9 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: SEGMENTATION MATRIX -->
+        <div class="slide" id="slide-10">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">SEGMENTATION ARCHITECTURE</div>
+                    <div class="slide-title">Empirical Multi-Dimensional Risk Matrix</div>
+                </div>
+                <div class="slide-meta">Framework: <strong>Demographic × Financial × Behavioral</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card rose">
+                        <div class="card-label">Priority 1: Affluent Mature Germans</div>
+                        <div style="font-size: 1.4rem; font-weight: 800; color: #f43f5e; margin: 4px 0;">68.4% Churn Probability</div>
+                        <div class="card-desc">Age 46–60 | Balance > €100K | Germany | Single/Multi-product. Highest balance exposure in the bank. Demands dedicated private banking intervention.</div>
+                    </div>
+                    <div class="card rose">
+                        <div class="card-label">Priority 2: Disengaged Multi-Product</div>
+                        <div style="font-size: 1.4rem; font-weight: 800; color: #f43f5e; margin: 4px 0;">54.1% Churn Probability</div>
+                        <div class="card-desc">Inactive members holding 3+ products. Burdened with hidden fees and zero digital activity. High operational friction.</div>
+                    </div>
+                    <div class="card cyan">
+                        <div class="card-label">Priority 3: Young Digital Savers</div>
+                        <div style="font-size: 1.4rem; font-weight: 800; color: #38bdf8; margin: 4px 0;">7.5% Churn Probability</div>
+                        <div class="card-desc">Age < 30 | Active members | 2 products. Prime target for long-term customer lifetime value (LTV) cultivation.</div>
+                    </div>
+                    <div class="card cyan">
+                        <div class="card-label">Priority 4: Core Retail Mainstream</div>
+                        <div style="font-size: 1.4rem; font-weight: 800; color: #38bdf8; margin: 4px 0;">14.2% Churn Probability</div>
+                        <div class="card-desc">Age 30–45 | Active salary direct deposit in France & Spain. Stable baseline of bank retail revenue.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 10 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: TECHNICAL ARCHITECTURE -->
+        <div class="slide" id="slide-11">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">SYSTEM ARCHITECTURE</div>
+                    <div class="slide-title">End-to-End Analytics Pipeline & Tech Stack</div>
+                </div>
+                <div class="slide-meta">Platform: <strong>Python 3.13, Streamlit, Plotly, SQL</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-4">
+                    <div class="card cyan">
+                        <div class="card-label">1. Storage & Ingestion</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #38bdf8; margin-bottom: 0.5rem;">PostgreSQL / DuckDB</div>
+                        <div class="card-desc">DDL schemas, automated data hygiene validation, pre-computed analytical views for low-latency querying.</div>
+                    </div>
+                    <div class="card amber">
+                        <div class="card-label">2. Analytics Engine</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #fbbf24; margin-bottom: 0.5rem;">Python Core Modules</div>
+                        <div class="card-desc">Vectorized pandas logic, non-linear age binning, Geographic Risk Index calculations, and balance flight quantification.</div>
+                    </div>
+                    <div class="card purple">
+                        <div class="card-label">3. Visual Engine</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #c084fc; margin-bottom: 0.5rem;">Plotly Dark Graphics</div>
+                        <div class="card-desc">High-contrast charts, glassmorphic metric cards, custom tooltip styling, and responsive layout grids.</div>
+                    </div>
+                    <div class="card rose">
+                        <div class="card-label">4. Application Layer</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #f43f5e; margin-bottom: 0.5rem;">Streamlit UX</div>
+                        <div class="card-desc">Dynamic multi-select sidebar, sticky floating sub-nav, customer drill-down search, and CSV export.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 11 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: DASHBOARD UX -->
+        <div class="slide" id="slide-12">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">USER EXPERIENCE</div>
+                    <div class="slide-title">Interactive Dashboard: Dark Cinematic Financial UI</div>
+                </div>
+                <div class="slide-meta">Live Port: <strong>http://localhost:8501</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card cyan">
+                        <div class="card-label">Interactive Capabilities</div>
+                        <div style="font-size: 1.2rem; font-weight: 700; color: #38bdf8; margin-bottom: 0.5rem;">Dynamic Portfolio Triage</div>
+                        <div class="card-desc" style="font-size: 0.95rem; line-height: 1.6;">
+                            • <strong>Multi-Select Filters:</strong> Instantly slice across Geography, Gender, and Member Activity status with real-time chart updates.<br>
+                            • <strong>Sticky Floating Navbar:</strong> Direct anchor jumping to Executive Summary, Regional Landscape, Patterns, Risk, and Customer Stories.<br>
+                            • <strong>High-Contrast Aesthetics:</strong> Midnight navy containers, bold white fonts, crimson badges, and cyan accents preventing eye fatigue.
+                        </div>
+                    </div>
+                    <div class="card purple">
+                        <div class="card-label">Customer Drill-Down & Export</div>
+                        <div style="font-size: 1.2rem; font-weight: 700; color: #c084fc; margin-bottom: 0.5rem;">Actionable CRM Integration</div>
+                        <div class="card-desc" style="font-size: 0.95rem; line-height: 1.6;">
+                            • <strong>Search Engine:</strong> Real-time filtering by Customer ID or Surname across 10,000 records.<br>
+                            • <strong>Segment Segmentation:</strong> View high-value churners or filtered cohorts in a clean data grid.<br>
+                            • <strong>1-Click CSV Export:</strong> Instant cohort download formatted for direct import into Salesforce, HubSpot, or banking core CRM systems.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 12 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: STRATEGIC PLAYBOOK -->
+        <div class="slide" id="slide-13">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">EXECUTIVE PLAYBOOK</div>
+                    <div class="slide-title">Strategic Retention Playbook: 4 Core Interventions</div>
+                </div>
+                <div class="slide-meta">Objective: <strong>Halt €185M Balance Flight</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card rose">
+                        <div class="card-label">Play 1: German Subsidiary Recalibration</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #f43f5e; margin: 0.3rem 0;">Abolish Fees & Introduce Tiered Yields</div>
+                        <div class="card-desc">Eliminate account maintenance fees for balances exceeding €50,000. Launch automated competitive term-deposit matching to defend against fintech migration.</div>
+                    </div>
+                    <div class="card amber">
+                        <div class="card-label">Play 2: Wealth-Stage Relationship Managers</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #fbbf24; margin: 0.3rem 0;">Target Age 46–60 Depositors</div>
+                        <div class="card-desc">Reassign customers reaching age 45 with > €80,000 balances to dedicated Premier Relationship Managers. Offer wealth transfer and tax-advantaged pension wrappers.</div>
+                    </div>
+                    <div class="card cyan">
+                        <div class="card-label">Play 3: Product Bundle Simplification</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #38bdf8; margin: 0.3rem 0;">Cap 3rd/4th Product Quotas</div>
+                        <div class="card-desc">Re-engineer the cross-selling incentive matrix. Introduce mandatory 90-day onboarding concierge check-ins when customers acquire an additional financial product.</div>
+                    </div>
+                    <div class="card purple">
+                        <div class="card-label">Play 4: 30-Day Dormancy Alert Trigger</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #c084fc; margin: 0.3rem 0;">Automated Early Intervention</div>
+                        <div class="card-desc">Deploy automated app notifications, cashback rewards, or advisor calls whenever an account records zero login transactions for 30 consecutive days.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 13 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: RESUME / CANDIDATE CREDENTIALS -->
+        <div class="slide" id="slide-14">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">CANDIDATE CREDENTIALS</div>
+                    <div class="slide-title">Engineering Competencies & Project Impact</div>
+                </div>
+                <div class="slide-meta">Author: <strong>Panchaksharayya</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card cyan">
+                        <div class="card-label">Technical Skill Highlights</div>
+                        <div style="font-size: 1.2rem; font-weight: 700; color: #38bdf8; margin-bottom: 0.5rem;">Full-Stack Analytics & Modeling</div>
+                        <div class="card-desc" style="font-size: 0.95rem; line-height: 1.6;">
+                            • <strong>Languages & Tools:</strong> Python, SQL (PostgreSQL), Streamlit, Plotly, Pandas, NumPy, Scikit-Learn.<br>
+                            • <strong>Quantitative Analytics:</strong> Geographic Risk Indexing (GRI), Non-linear cohort hazard analysis, Basel III deposit flight modeling.<br>
+                            • <strong>UI / UX Engineering:</strong> Bespoke dark-mode CSS design systems, accessible contrast, mobile-responsive layout grids.
+                        </div>
+                    </div>
+                    <div class="card purple">
+                        <div class="card-label">Career Positioning</div>
+                        <div style="font-size: 1.2rem; font-weight: 700; color: #c084fc; margin-bottom: 0.5rem;">Target Professional Roles</div>
+                        <div class="card-desc" style="font-size: 0.95rem; line-height: 1.6;">
+                            • <strong>Data Analyst / Quantitative Financial Analyst:</strong> Expertise in business intelligence, SQL data pipelines, and executive dashboards.<br>
+                            • <strong>Data Scientist / ML Engineer:</strong> Predictive churn hazard modeling, feature engineering, and statistical clustering.<br>
+                            • <strong>Fintech Product Analyst:</strong> Customer journey optimization, churn prevention, and product bundle economics.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 14 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: REFERENCES -->
+        <div class="slide" id="slide-15">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-badge">SCHOLARLY CITATIONS</div>
+                    <div class="slide-title">Academic Literature & Regulatory Sources</div>
+                </div>
+                <div class="slide-meta">Standards: <strong>IEEE / Harvard Formatting</strong></div>
+            </div>
+            <div class="slide-body">
+                <div class="card" style="background: rgba(15, 23, 42, 0.85); border-color: rgba(56, 189, 248, 0.25);">
+                    <div style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.8;">
+                        [1] <strong>Boot, A. W. (2000).</strong> "Relationship Banking: What Do We Know?" <em>Journal of Financial Intermediation</em>, 9(1), 7–25.<br>
+                        [2] <strong>Klemperer, P. (1995).</strong> "Competition when Consumers have Switching Costs: An Overview." <em>Review of Economic Studies</em>, 62(4), 515–539.<br>
+                        [3] <strong>Modigliani, F. (1986).</strong> "Life Cycle, Individual Thrift, and the Wealth of Nations." <em>American Economic Review</em>, 76(3), 297–313.<br>
+                        [4] <strong>Degryse, H., & Ongena, S. (2007).</strong> "The Impact of Technology and Regulation on Banking Geography." <em>Oxford Review of Economic Policy</em>, 23(2), 265–285.<br>
+                        [5] <strong>Verhoef, P. C., et al. (2002).</strong> "The Effect of Relational Constructs on Customer Potential." <em>Journal of Service Research</em>, 4(3), 202–216.<br>
+                        [6] <strong>Basel Committee on Banking Supervision (2013).</strong> "Basel III: The Liquidity Coverage Ratio." <em>Bank for International Settlements (BIS)</em>.<br>
+                        [7] <strong>European Banking Authority (2023).</strong> "Risk Dashboard: European Banking Sector Resilience." <em>EBA</em>.
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 15 of 16</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: CONCLUSION / CONTACT -->
+        <div class="slide" id="slide-16">
+            <div class="slide-body" style="justify-content: center; text-align: center;">
+                <div class="slide-badge">PROJECT CONCLUSION</div>
+                <h1 style="font-size: 3rem; font-weight: 800; color: #ffffff; margin-bottom: 0.8rem;">
+                    Thank You
+                </h1>
+                <p style="font-size: 1.25rem; color: #38bdf8; font-weight: 700; margin-bottom: 2rem;">
+                    Pattern Analytics · European Banking Intelligence Platform
+                </p>
+
+                <div style="max-width: 650px; margin: 0 auto; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 14px; padding: 1.8rem; text-align: left;">
+                    <div style="font-size: 1.25rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Panchaksharayya</div>
+                    <div style="font-size: 0.95rem; color: #94a3b8; line-height: 1.7;">
+                        • <strong>Academic Program:</strong> B.Tech Student, Information Technology (AR / VR)<br>
+                        • <strong>Email Contact:</strong> <a href="mailto:panchaksharayyas22@gmail.com" style="color: #38bdf8; text-decoration: none;">panchaksharayyas22@gmail.com</a><br>
+                        • <strong>Live Interactive System:</strong> <a href="http://localhost:8501" target="_blank" style="color: #38bdf8; text-decoration: none;">http://localhost:8501</a><br>
+                        • <strong>Deliverables:</strong> PowerPoint Presentation (.pptx), Technical Report, IEEE Research Paper
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Pattern Analytics · Panchaksharayya (panchaksharayyas22@gmail.com)</div>
+                <div>Slide 16 of 16</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Interactive Navigation Toolbar -->
+    <div class="controls">
+        <button class="btn" onclick="prevSlide()">◀ Previous</button>
+        <span class="progress-indicator" id="slide-num">Slide 1 of 16</span>
+        <button class="btn" onclick="nextSlide()">Next ▶</button>
+        <button class="btn" onclick="toggleFullScreen()">⛶ Fullscreen</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 16;
+
+        function showSlide(n) {
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(`slide-${n}`);
+            if (target) {
+                target.classList.add('active');
+                document.getElementById('slide-num').innerText = `Slide ${n} of ${totalSlides}`;
+                currentSlide = n;
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                showSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                prevSlide();
+            }
+        });
+    </script>
+</body>
+</html>

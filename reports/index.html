@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Analytics - Deliverables Portal | Panchaksharayya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #030712;
+            --bg-card: rgba(15, 23, 42, 0.85);
+            --border: rgba(255, 255, 255, 0.12);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --cyan: #38bdf8;
+            --rose: #f43f5e;
+            --amber: #fbbf24;
+            --purple: #c084fc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            background-image: 
+                radial-gradient(circle at 85% 12%, rgba(26, 54, 93, 0.35) 0%, transparent 55%),
+                radial-gradient(circle at 10% 35%, rgba(13, 37, 68, 0.3) 0%, transparent 45%);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portal-wrapper {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(8, 14, 28, 0.92);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--cyan);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            padding: 5px 14px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        h1 span {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #7dd3fc;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 750px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .author-banner {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 14px;
+            padding: 18px 24px;
+            margin-bottom: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .author-info h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .author-info p {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin-top: 4px;
+        }
+
+        .author-info strong {
+            color: var(--cyan);
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 35px;
+        }
+
+        .portal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .portal-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+        }
+
+        .portal-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 24px;
+            right: 24px;
+            height: 3px;
+            border-radius: 3px;
+        }
+
+        .portal-card.cyan::before { background: linear-gradient(90deg, #38bdf8, transparent); }
+        .portal-card.rose::before { background: linear-gradient(90deg, #f43f5e, transparent); }
+        .portal-card.amber::before { background: linear-gradient(90deg, #fbbf24, transparent); }
+        .portal-card.purple::before { background: linear-gradient(90deg, #c084fc, transparent); }
+
+        .card-tag {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .card-tag.cyan { color: var(--cyan); }
+        .card-tag.rose { color: var(--rose); }
+        .card-tag.amber { color: var(--amber); }
+        .card-tag.purple { color: var(--purple); }
+
+        .card-title {
+            font-size: 21px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 8px 16px;
+            border-radius: 9999px;
+            width: fit-content;
+            transition: all 0.2s ease;
+        }
+
+        .portal-card:hover .card-cta {
+            background: #0284c7;
+            color: #ffffff;
+        }
+
+        .portal-card.rose:hover .card-cta {
+            background: #e11d48;
+        }
+
+        .portal-card.amber:hover .card-cta {
+            background: #d97706;
+        }
+
+        .footer-banner {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #64748b;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer-banner a {
+            color: var(--cyan);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .portal-grid { grid-template-columns: 1fr; }
+            .portal-wrapper { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portal-wrapper">
+        <span class="badge">DIRECT PROJECT DELIVERABLES LAUNCHPAD</span>
+        <h1>Pattern Analytics <span>Deliverables Hub</span></h1>
+        <p class="subtitle">
+            Customer Segmentation & Churn Pattern Analytics in European Banking. Select any deliverable below to launch or download immediately.
+        </p>
+
+        <!-- Candidate Profile -->
+        <div class="author-banner">
+            <div class="author-info">
+                <h3>Panchaksharayya</h3>
+                <p>
+                    <strong>Academic Degree:</strong> B.Tech Student in Information Technology (Specialization: Augmented Reality & Virtual Reality)<br>
+                    <strong>Email:</strong> panchaksharayyas22@gmail.com &nbsp;|&nbsp; <strong>Focus:</strong> Quantitative Banking Analytics & Visual Intelligence
+                </p>
+            </div>
+            <a href="http://localhost:8501" target="_blank" style="text-decoration: none; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #fff; padding: 10px 20px; border-radius: 10px; font-weight: 700; font-size: 13px; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);">
+                🚀 Open Live Dashboard (Port 8501)
+            </a>
+        </div>
+
+        <!-- 4 Core Deliverable Cards -->
+        <div class="portal-grid">
+
+            <!-- 1. Interactive Slides -->
+            <a href="/presentation_slides.html" target="_blank" class="portal-card cyan">
+                <div>
+                    <div class="card-tag cyan">01 · INTERACTIVE PRESENTATION</div>
+                    <div class="card-title">16-Slide Web Presentation Deck</div>
+                    <div class="card-desc">
+                        Interactive widescreen deck ready for browser display with keyboard arrows (← / →), fullscreen mode, glassmorphic metric cards, and presenter notes.
+                    </div>
+                </div>
+                <div class="card-cta">Launch Slide Deck ➔</div>
+            </a>
+
+            <!-- 2. PowerPoint (.pptx) Download -->
+            <a href="/Pattern_Analytics_Presentation.pptx" download="Pattern_Analytics_Presentation.pptx" class="portal-card amber">
+                <div>
+                    <div class="card-tag amber">02 · POWERPOINT FILE (.PPTX)</div>
+                    <div class="card-title">Download PowerPoint Deck</div>
+                    <div class="card-desc">
+                        Direct download of the 16:9 widescreen Microsoft PowerPoint (.pptx) file. Fully editable in PowerPoint, Google Slides, and Keynote with speaker notes.
+                    </div>
+                </div>
+                <div class="card-cta">📥 Download PPTX File ➔</div>
+            </a>
+
+            <!-- 3. Technical Project Report -->
+            <a href="/project_report.html" target="_blank" class="portal-card rose">
+                <div>
+                    <div class="card-tag rose">03 · TECHNICAL ENTERPRISE REPORT</div>
+                    <div class="card-title">Comprehensive Project Report</div>
+                    <div class="card-desc">
+                        Full technical document with system architecture block diagram, database schema views, empirical data tables, 90-day retention roadmap, and ATS resume highlights.
+                    </div>
+                </div>
+                <div class="card-cta">View Technical Report ➔</div>
+            </a>
+
+            <!-- 4. Academic Research Paper -->
+            <a href="/research_paper.html" target="_blank" class="portal-card purple">
+                <div>
+                    <div class="card-tag purple">04 · ACADEMIC RESEARCH PAPER</div>
+                    <div class="card-title">Formal IEEE Research Paper</div>
+                    <div class="card-desc">
+                        Academic paper typeset with abstract, theoretical literature review (Boot, Modigliani), mathematical formulas (GRI, Capital Flight), and 8+ formal citations.
+                    </div>
+                </div>
+                <div class="card-cta">Read Academic Paper ➔</div>
+            </a>
+
+        </div>
+
+        <!-- Secondary Section for Resume Toolkit -->
+        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-radius: 12px; padding: 18px 24px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div>
+                <strong style="color: #ffffff; font-size: 15px;">💼 Resume & Interview Ready Portfolio Toolkit:</strong>
+                <span style="color: var(--text-muted); font-size: 13px; display: block; margin-top: 2px;">
+                    Copy-paste ATS resume points for Data Analyst / Data Scientist roles, LinkedIn announcement draft, and Top 10 Technical Interview Q&A.
+                </span>
+            </div>
+            <a href="/resume_project_summary.md" target="_blank" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 8px 18px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none;">
+                Open Resume Toolkit ➔
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-banner">
+            <div>
+                Pattern Analytics · Engineered by <strong>Panchaksharayya</strong> (panchaksharayyas22@gmail.com)
+            </div>
+            <div>
+                Live Dashboard: <a href="http://localhost:8501" target="_blank">http://localhost:8501</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

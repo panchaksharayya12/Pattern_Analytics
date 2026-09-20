@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Project Report: Pattern Analytics | Panchaksharayya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #030712;
+            --bg-card: #0f172a;
+            --border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --cyan: #38bdf8;
+            --rose: #f43f5e;
+            --amber: #fbbf24;
+            --purple: #c084fc;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #080e1e;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 50px 60px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+        }
+        .header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--cyan);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        h1 { font-size: 32px; font-weight: 800; color: #fff; line-height: 1.25; margin-bottom: 15px; }
+        h2 { font-size: 22px; font-weight: 800; color: var(--cyan); margin: 35px 0 15px 0; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+        h3 { font-size: 17px; font-weight: 700; color: #fff; margin: 25px 0 10px 0; }
+        p { color: var(--text-muted); margin-bottom: 16px; font-size: 15px; }
+        strong { color: #fff; font-weight: 600; }
+        ul, ol { margin: 0 0 20px 25px; color: var(--text-muted); font-size: 15px; }
+        li { margin-bottom: 6px; }
+        .author-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin: 25px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .author-item strong { display: block; font-size: 11px; color: var(--cyan); text-transform: uppercase; letter-spacing: 1px; }
+        .author-item span { font-size: 15px; color: #fff; font-weight: 600; }
+        pre {
+            background: #040813;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: #7dd3fc;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th, td {
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th { background: rgba(15, 23, 42, 0.9); color: var(--cyan); font-weight: 700; }
+        td { color: var(--text-muted); }
+        tr:hover td { background: rgba(255, 255, 255, 0.02); color: #fff; }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .kpi-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+        .kpi-box .val { font-size: 24px; font-weight: 800; color: #fff; }
+        .kpi-box .lbl { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+        @media (max-width: 768px) {
+            .container { padding: 25px; }
+            .kpi-grid { grid-template-columns: 1fr 1fr; }
+            .author-box { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="badge">PRODUCTION ENTERPRISE DELIVERABLE</span>
+            <h1>Technical Project Report: Customer Segmentation & Churn Pattern Analytics in European Banking</h1>
+            <p style="font-size: 16px; color: var(--text-muted);">
+                Pattern Analytics · European Banking Intelligence Platform · Release v1.0
+            </p>
+            <div class="author-box">
+                <div class="author-item">
+                    <strong>Author & Principal Architect</strong>
+                    <span>Panchaksharayya</span>
+                </div>
+                <div class="author-item">
+                    <strong>Academic Program & Specialization</strong>
+                    <span>B.Tech Student, Information Technology (AR / VR)</span>
+                </div>
+                <div class="author-item">
+                    <strong>Email Contact</strong>
+                    <span>panchaksharayyas22@gmail.com</span>
+                </div>
+                <div class="author-item">
+                    <strong>System Live URL</strong>
+                    <span><a href="http://localhost:8501" target="_blank" style="color: var(--cyan); text-decoration: none;">http://localhost:8501</a></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-box" style="border-top: 2px solid var(--cyan);">
+                <div class="val">10,000</div>
+                <div class="lbl">Total Accounts</div>
+            </div>
+            <div class="kpi-box" style="border-top: 2px solid var(--rose);">
+                <div class="val">20.37%</div>
+                <div class="lbl">Portfolio Churn</div>
+            </div>
+            <div class="kpi-box" style="border-top: 2px solid var(--amber);">
+                <div class="val">28.67%</div>
+                <div class="lbl">High-Value Churn</div>
+            </div>
+            <div class="kpi-box" style="border-top: 2px solid var(--purple);">
+                <div class="val">€185.59M</div>
+                <div class="lbl">Balance At Risk</div>
+            </div>
+        </div>
+
+        <!-- Rendered Report Content -->
+        <h2>1. Executive Overview & Problem Statement</h2>
+        <p>
+            Customer churn in retail banking imposes an enormous, often hidden drag on enterprise profitability. Losing existing depositors triggers three compounded financial penalties:
+        </p>
+        <ul>
+            <li><strong>Destruction of Lifetime Customer Value (LTV):</strong> Defecting relationships liquidate future interest spreads, card interchange fees, and investment transaction revenues.</li>
+            <li><strong>Elevated Replacement Costs:</strong> In saturated European banking markets (France, Germany, Spain), acquiring a replacement retail customer costs 5x to 7x more than preserving an existing account.</li>
+            <li><strong>Severe Liquidity Drainage & Capital Flight:</strong> When churn is concentrated among mature or affluent depositors, stable low-cost retail core deposits vanish from the balance sheet, forcing the bank to replace liquidity with expensive wholesale borrowings under Basel III Liquidity Coverage Ratios (LCR).</li>
+        </ul>
+
+        <h2>2. System Architecture & Technical Stack</h2>
+        <p>The solution is architected as a modular, decoupled data intelligence platform:</p>
+        <pre>
++-------------------------------------------------------------------------------+
+|                            PRESENTATION LAYER                                 |
+|   Streamlit Web Application (dashboard/app.py)                                 |
+|   - Base64 Master Hero Frame with Transparent Hotspot Navigation Links        |
+|   - Sticky Floating Sub-Navigation Bar (#overview, #landscape, etc.)          |
+|   - Glassmorphic KPI Cards & High-Contrast Plotly Dark Charts                 |
+|   - Real-Time Dynamic Filtering (Market, Gender, Member Activity)             |
+|   - Customer Drill-Down Explorer & On-Demand CSV Data Export                   |
++-------------------------------------------------------------------------------+
+                                      ▲
+                                      │
++-------------------------------------------------------------------------------+
+|                            ANALYTICAL ENGINE                                  |
+|   Python Core Modules (src/)                                                  |
+|   - data_loader.py: Dataset ingestion & memory optimization                   |
+|   - preprocessing.py: Age cohort binning (<30, 30-45, 46-60, 60+)             |
+|   - segmentation.py: Multi-dimensional segment assignments & HVC flags        |
+|   - analytics.py: Churn rate, GRI, segment aggregations, financial exposure   |
++-------------------------------------------------------------------------------+
+                                      ▲
+                                      │
++-------------------------------------------------------------------------------+
+|                            STORAGE & DATA LAYER                               |
+|   PostgreSQL / Supabase Schema (sql/schema.sql)                               |
+|   - Normalized customers table with strict integrity checks                   |
+|   - 7 pre-computed analytical views for low-latency reporting queries         |
++-------------------------------------------------------------------------------+
+        </pre>
+
+        <h2>3. Key Empirical Discoveries</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Analytical Domain</th>
+                    <th>Observed Pattern</th>
+                    <th>Quantified Metric</th>
+                    <th>Operational Significance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Geographic Divergence</strong></td>
+                    <td>German Subsidiary Anomaly</td>
+                    <td><span style="color: var(--rose); font-weight:700;">32.44% Churn</span> (GRI: 1.59)</td>
+                    <td>Double the attrition of France (16.15%) and Spain (16.67%). Driven by neobank competition and deposit fees.</td>
+                </tr>
+                <tr>
+                    <td><strong>Demographic Gradient</strong></td>
+                    <td>Age 46–60 Pre-Retirement Peak</td>
+                    <td><span style="color: var(--rose); font-weight:700;">56.21% Churn</span></td>
+                    <td>Critical danger zone. High-balance clients defecting due to absent private banking advisory.</td>
+                </tr>
+                <tr>
+                    <td><strong>Product Bundling</strong></td>
+                    <td>The Cross-Selling Cliff</td>
+                    <td>2 Prods: <span style="color: var(--cyan); font-weight:700;">7.58%</span> | 3+: <span style="color: var(--rose); font-weight:700;">82.71%</span></td>
+                    <td>2 products is the optimal anchor. 3+ products creates operational friction and 100% defection on 4 products.</td>
+                </tr>
+                <tr>
+                    <td><strong>Financial Exposure</strong></td>
+                    <td>The Wealth Paradox</td>
+                    <td>Churn: <span style="color: var(--rose); font-weight:700;">€91,108</span> | Retained: €72,745</td>
+                    <td>Departing customers hold 25.2% higher balances. Total capital flight: €185.59M (€83.38M in HVCs).</td>
+                </tr>
+                <tr>
+                    <td><strong>Activity Signal</strong></td>
+                    <td>Dormancy Multiplier</td>
+                    <td>Inactive: <span style="color: var(--rose); font-weight:700;">26.85%</span> | Active: 14.27%</td>
+                    <td>Dormancy triggers an 88% surge in churn probability. 30-day inactivity alert threshold required.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>4. 90-Day Operational Retention Roadmap</h2>
+        <pre>
++---------------------------------------------------------------------------------------+
+|                              90-DAY RETENTION ROADMAP                                  |
++---------------------------------------------------------------------------------------+
+| Phase 1: Days 1-30     | Phase 2: Days 31-60           | Phase 3: Days 61-90          |
+| Immediate Triage       | Process Re-Engineering        | Systemic Integration         |
++------------------------+-------------------------------+------------------------------+
+| - Freeze 4th product   | - Launch Premier Advisory desk| - Deploy automated Early-     |
+|   promotional bundles  |   for 46-60 accounts (>€50k)  |   Warning System (EWS) for    |
+| - Audit German fee     | - Implement automated sweep   |   60-day inactivity          |
+|   schedules on €50k+   |   accounts in German market   | - Integrate Supabase real-time|
+|   balances             | - Retrain cross-sell teams    |   churn scoring API into CRM  |
+| - Identify top 691     |   on the "Two-Product Rule"   | - Measure baseline reduction  |
+|   at-risk HVC accounts | - Establish retention desks   |   in monthly German attrition |
++---------------------------------------------------------------------------------------+
+        </pre>
+        <p>
+            <strong>Projected Financial Impact:</strong> Retaining just 15% of at-risk high-value customers preserves <strong>€12.51 million</strong> in stable core deposits, translating to an estimated <strong>€450,000–€600,000</strong> in preserved annual net interest margin.
+        </p>
+
+        <h2>5. Resume Ready Highlights (Panchaksharayya)</h2>
+        <ul>
+            <li><strong>Data Analyst / BI:</strong> Engineered an end-to-end retail banking analytics platform across 10,000 customer accounts using Python, PostgreSQL, and Streamlit. Built the Geographic Risk Index (GRI) and quantified €185.59M in liquidated core deposits.</li>
+            <li><strong>Data Scientist / ML:</strong> Discovered the 56.2% churn hazard peak in the 46–60 cohort and the 82.7% cross-selling cliff on 3+ products. Modeled the Wealth Paradox where churners carried 25.2% higher ledger balances.</li>
+            <li><strong>FinTech Product Analyst:</strong> Formulated a 4-pillar retention playbook with 30-day inactivity early warning triggers to preserve liquidity under Basel III frameworks.</li>
+        </ul>
+
+        <h2>6. Scholarly & Regulatory References</h2>
+        <ol>
+            <li><strong>Boot, A. W. (2000).</strong> "Relationship Banking: What Do We Know?" <em>Journal of Financial Intermediation</em>, 9(1), 7–25.</li>
+            <li><strong>Cohen, M. (2004).</strong> "Customer Retention in Retail Banking: Multi-Product Relationships." <em>Int. Journal of Bank Marketing</em>, 22(4), 254–271.</li>
+            <li><strong>Klemperer, P. (1995).</strong> "Competition when Consumers have Switching Costs." <em>Review of Economic Studies</em>, 62(4), 515–539.</li>
+            <li><strong>Modigliani, F. (1986).</strong> "Life Cycle, Individual Thrift, and the Wealth of Nations." <em>American Economic Review</em>, 76(3), 297–313.</li>
+            <li><strong>Basel Committee on Banking Supervision (2013).</strong> <em>Basel III: The Liquidity Coverage Ratio.</em> Bank for International Settlements (BIS).</li>
+        </ol>
+
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center; font-size: 13px; color: var(--text-muted);">
+            Pattern Analytics Platform · Authored by Panchaksharayya (panchaksharayyas22@gmail.com) · March 2026
+        </div>
+    </div>
+</body>
+</html>
