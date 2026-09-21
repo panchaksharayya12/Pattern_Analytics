@@ -10,6 +10,23 @@
 
 ---
 
+### 👤 Author & Lead Architect
+- **Name:** **Panchaksharayya**
+- **Academic Degree:** **B.Tech Student in Information Technology (Specialization: Augmented Reality & Virtual Reality)**
+- **Email:** **panchaksharayyas22@gmail.com**
+- **Live Interactive Dashboard:** **[http://localhost:8501](http://localhost:8501)**
+
+---
+
+### 📂 Institutional Project Deliverables (Direct Downloads):
+- 📊 **[PowerPoint Presentation Deck (.pptx)](Pattern_Analytics_Presentation.pptx)** — 16 widescreen slides with dark cinematic palette, KPI cards, presenter notes, and references.
+- 📑 **[Technical Enterprise Project Report (.docx)](Pattern_Analytics_Project_Report.docx)** — Complete Word report with system architecture, empirical tables, 90-day retention roadmap, and ATS resume points.
+- 🔬 **[Academic Research Paper (.docx)](Pattern_Analytics_Research_Paper.docx)** — IEEE journal formatted paper with mathematical equations for GRI and balance flight, abstract box, and formal citations.
+- 💼 **[Resume & Interview Toolkit (.md)](resume_project_summary.md)** — Copy-paste ATS resume bullet points, LinkedIn announcement post, and Top 10 Technical Interview Q&A.
+
+
+---
+
 ## 🌟 Executive Overview & Key Findings
 
 Customer attrition represents one of the largest hidden drags on retail banking balance sheets. `Pattern Analytics` provides executive decision-support and granular behavioral segmentation across demographic, financial, and product dimensions to quantify capital exposure and guide proactive retention strategies.
