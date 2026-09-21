@@ -46,17 +46,17 @@ Choose the section that matches the role you are applying for:
 ### Body Description (Copy & Paste to LinkedIn / GitHub README)
 > Excited to share my latest end-to-end quantitative data project: **Pattern Analytics · European Banking Intelligence**!
 >
-> 📌 **The Challenge:** In retail banking, customer attrition isn't just a loss of account volume—it is a severe capital liquidation event. When high-balance depositors leave, stable low-cost deposits vanish from the balance sheet, forcing banks into expensive wholesale borrowings under Basel III liquidity rules.
+> **[The Problem]** In retail banking, customer attrition isn't just a loss of account volume—it is a severe capital liquidation event. When high-balance depositors leave, stable low-cost deposits vanish from the balance sheet, forcing banks into expensive wholesale borrowings under Basel III liquidity rules.
 >
-> 💡 **What I Built:**
+> **[The Implementation]**
 > - **End-to-End Analytics Pipeline:** Ingested, cleaned, and enriched 10,000 microdata accounts across France, Germany, and Spain using Python (Pandas, NumPy) and PostgreSQL.
 > - **Behavioral & Hazard Insights:** Uncovered that the German market exhibits double the churn of France (32.4% vs 16.1%, GRI: 1.59); isolated a 56.2% churn peak among pre-retirees (Age 46–60); and proved that holding 3+ products leads to an 82.7% attrition cliff.
-> - **The Wealth Paradox:** Proved that churners carry 25.2% *higher* ledger balances (€91.1K vs €72.7K retained), exposing €185.6M in lost capital.
+> - **The Wealth Paradox:** Proved that churners carry 25.2% higher ledger balances (€91.1K vs €72.7K retained), exposing €185.6M in lost capital.
 > - **Interactive Executive UX:** Engineered a dark cinematic Streamlit web application with real-time dynamic filtering, individual account explorer, and instant CSV export.
 >
-> 🔗 Live Demo: http://localhost:8501  
-> 📄 Complete with 16-slide Executive PPTX deck, Technical Report, and IEEE Research Paper!  
-> 👨‍💻 Author: Panchaksharayya (B.Tech IT AR/VR | panchaksharayyas22@gmail.com)
+> • Project Dashboard: http://localhost:8501  
+> • Deliverables: Complete with 16-slide Executive PPTX deck, Technical Report, and IEEE Research Paper.  
+> • Author: Panchaksharayya (B.Tech IT AR/VR | panchaksharayyas22@gmail.com)
 
 ---
 

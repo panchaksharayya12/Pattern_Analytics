@@ -1,33 +1,37 @@
-# Pattern Analytics · European Banking Customer Intelligence Platform
+# Pattern Analytics: European Banking Customer Intelligence Platform
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-FF4B4B.svg)](https://streamlit.io/)
-[![Plotly](https://img.shields.io/badge/Plotly-Dark%20Theme-00d2ff.svg)](https://plotly.com/)
-[![Database](https://img.shields.io/badge/PostgreSQL-Supabase-3ECF8E.svg)](https://supabase.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-1e293b.svg?style=flat-square&logo=python)](https://www.python.org/)
+[![Streamlit Framework](https://img.shields.io/badge/Streamlit-1.30%2B-0284c7.svg?style=flat-square&logo=streamlit)](https://streamlit.io/)
+[![Plotly Dark](https://img.shields.io/badge/Plotly-Dark_Theme-334155.svg?style=flat-square&logo=plotly)](https://plotly.com/)
+[![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL_/_Supabase-0f172a.svg?style=flat-square&logo=postgresql)](https://supabase.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-475569.svg?style=flat-square)](LICENSE)
 
-> **Understanding why customers leave:** A comprehensive customer segmentation, churn pattern analytics, and capital flight intelligence platform across a 10,000-customer European retail banking microdataset spanning France, Germany, and Spain.
-
----
-
-### 👤 Author & Lead Architect
-- **Name:** **Panchaksharayya**
-- **Academic Degree:** **B.Tech Student in Information Technology (Specialization: Augmented Reality & Virtual Reality)**
-- **Email:** **panchaksharayyas22@gmail.com**
-- **Live Interactive Dashboard:** **[http://localhost:8501](http://localhost:8501)**
+> A quantitative empirical investigation into retail customer attrition, multi-dimensional segmentation, and capital flight exposure across 10,000 European consumer banking accounts in France, Germany, and Spain.
 
 ---
 
-### 📂 Institutional Project Deliverables (Direct Downloads):
-- 📊 **[PowerPoint Presentation Deck (.pptx)](Pattern_Analytics_Presentation.pptx)** — 16 widescreen slides with dark cinematic palette, KPI cards, presenter notes, and references.
-- 📑 **[Technical Enterprise Project Report (.docx)](Pattern_Analytics_Project_Report.docx)** — Complete Word report with system architecture, empirical tables, 90-day retention roadmap, and ATS resume points.
-- 🔬 **[Academic Research Paper (.docx)](Pattern_Analytics_Research_Paper.docx)** — IEEE journal formatted paper with mathematical equations for GRI and balance flight, abstract box, and formal citations.
-- 💼 **[Resume & Interview Toolkit (.md)](resume_project_summary.md)** — Copy-paste ATS resume bullet points, LinkedIn announcement post, and Top 10 Technical Interview Q&A.
-
+### Author Profile
+- **Lead Researcher & Systems Architect:** Panchaksharayya
+- **Academic Program:** B.Tech Student in Information Technology (Specialization: Augmented Reality & Virtual Reality)
+- **Primary Contact:** [panchaksharayyas22@gmail.com](mailto:panchaksharayyas22@gmail.com)
+- **Interactive Dashboard:** `http://localhost:8501` (Streamlit runtime)
 
 ---
 
-## 🌟 Executive Overview & Key Findings
+### Project Deliverables & Working Documents
+
+The table below provides direct download links (which open natively in Microsoft Office) alongside web-based interactive previews:
+
+| Deliverable | Format | Direct Download (Opens in App) | Web Preview / Online Viewer | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **Executive Presentation Deck** | `.pptx` (PowerPoint) | [▸ Download Presentation (.pptx)](https://github.com/panchaksharayya12/Pattern_Analytics/raw/main/Pattern_Analytics_Presentation.pptx) | [▸ View in PowerPoint Online](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/panchaksharayya12/Pattern_Analytics/main/Pattern_Analytics_Presentation.pptx) · [HTML Web Deck](https://raw.githack.com/panchaksharayya12/Pattern_Analytics/main/reports/presentation_slides.html) | 16-slide widescreen (16:9) executive deck with dark financial palette, KPI scorecards, speaker notes, and literature references. |
+| **Technical Enterprise Report** | `.docx` (Word) | [▸ Download Project Report (.docx)](https://github.com/panchaksharayya12/Pattern_Analytics/raw/main/Pattern_Analytics_Project_Report.docx) | [▸ View in Word Online](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/panchaksharayya12/Pattern_Analytics/main/Pattern_Analytics_Project_Report.docx) · [HTML Version](https://raw.githack.com/panchaksharayya12/Pattern_Analytics/main/reports/project_report.html) | Comprehensive engineering and consulting document with architecture diagrams, empirical data tables, and 90-day retention roadmap. |
+| **Academic Research Paper** | `.docx` (Word) | [▸ Download Research Paper (.docx)](https://github.com/panchaksharayya12/Pattern_Analytics/raw/main/Pattern_Analytics_Research_Paper.docx) | [▸ View in Word Online](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/panchaksharayya12/Pattern_Analytics/main/Pattern_Analytics_Research_Paper.docx) · [HTML Version](https://raw.githack.com/panchaksharayya12/Pattern_Analytics/main/reports/research_paper.html) | Publication-format paper styled to IEEE standards with mathematical formulations (GRI, Capital Flight), theorems, and formal citations. |
+| **Resume & Interview Toolkit** | `.md` (Markdown) | [▸ View Toolkit (.md)](resume_project_summary.md) | [▸ Markdown Source](resume_project_summary.md) | Copy-paste ATS resume points for Data Analyst and Data Scientist roles, project description, and top 10 technical interview Q&A. |
+
+---
+
+## 1. Executive Summary & Core Empirical Findings
 
 Customer attrition represents one of the largest hidden drags on retail banking balance sheets. `Pattern Analytics` provides executive decision-support and granular behavioral segmentation across demographic, financial, and product dimensions to quantify capital exposure and guide proactive retention strategies.
 
@@ -43,7 +47,7 @@ Customer attrition represents one of the largest hidden drags on retail banking 
 +------------------------------+------------------------------+--------------------------------------+
 ```
 
-### Critical Empirical Patterns
+### Critical Findings:
 
 1. **The German Geographic Disparity (Risk Index: 1.59):**
    - Germany suffers an acute **32.44% churn rate**—exactly double the rates observed in France (16.15%) and Spain (16.67%).
@@ -56,13 +60,13 @@ Customer attrition represents one of the largest hidden drags on retail banking 
    - Cross-selling beyond two products triggers extreme friction: churn surges to **82.71% for 3 products** and reaches **100.00% for 4 products** due to unexpected maintenance fees and service complexity.
 4. **The Wealth Paradox in Capital Flight:**
    - Churning accounts hold an average balance of **€91,108** compared to **€72,745** for retained accounts (+25.2% higher).
-   - Defecting high-value customers ($Balance > €50k \land Salary > €100k$) represent only 6.91% of total accounts but account for **€83.38 million (44.9%)** of all liquid capital drained from the institution.
+   - Defecting high-value customers represent only 6.91% of total accounts but account for **€83.38 million (44.9%)** of all liquid capital drained from the institution.
 
 ---
 
-## 🖥️ System Architecture & UI/UX Design
+## 2. System Architecture & Technical Stack
 
-The application features a modern, dark cinematic aesthetic built directly around the master visual blueprint:
+The application features a decoupled, modular analytics architecture:
 
 ```
 +-----------------------------------------------------------------------------------+
@@ -89,7 +93,7 @@ The application features a modern, dark cinematic aesthetic built directly aroun
                                           │
 +-----------------------------------------------------------------------------------+
 |                             DATA & PERSISTENCE LAYER                              |
-|   Supabase / PostgreSQL Cloud Database (sql/)                                     |
+|   PostgreSQL Cloud Database & Flat Files (sql/)                                   |
 |   - sql/schema.sql: Primary table with integrity constraints & B-tree indexes    |
 |   - sql/analytics_views.sql: Pre-computed analytical views for rapid reporting    |
 |   - src/supabase_client.py: Dual-mode connector with transparent local fallback   |
@@ -99,55 +103,51 @@ The application features a modern, dark cinematic aesthetic built directly aroun
 
 ---
 
-## 📁 Repository Structure
+## 3. Repository Directory Structure
 
-```bash
+```text
 Pattern_Analytics/
-│
-├── assets/
-│   └── hero_europe_night.png         # Reference 16:9 cinematic master banner
-│
-├── dashboard/
-│   └── app.py                        # Main production Streamlit web application
-│
-├── data/
-│   ├── European_Bank.csv             # 10,000-customer benchmark retail dataset
-│   └── customer_data.csv             # Auxiliary customer records mirror
-│
-├── reports/
-│   ├── research_paper.md             # Publication-grade academic research paper
-│   ├── project_report.md             # Detailed technical & consulting report
-│   ├── executive_summary.md          # C-Suite / Board of Directors 2-page briefing
-│   └── presentation_deck.md          # 15-slide executive presentation deck
-│
-├── sql/
-│   ├── schema.sql                    # PostgreSQL/Supabase table DDL, constraints & indexes
-│   └── analytics_views.sql           # Production analytical views (GRI, age, products)
-│
-├── src/
-│   ├── __init__.py
-│   ├── data_loader.py                # Dataset loader module
-│   ├── preprocessing.py              # Age cohort binning transformation
-│   ├── segmentation.py               # Multi-dimensional customer segmentation
-│   ├── analytics.py                  # Core churn metrics & exposure formulations
-│   └── supabase_client.py            # Supabase database client with local CSV fallback
-│
-├── .env.example                      # Environment variables template
-├── requirements.txt                  # Pinned Python package dependencies
-└── README.md                         # Comprehensive platform documentation
+|-- assets/
+|   `-- hero_europe_night.png         # Reference 16:9 cinematic master banner
+|-- dashboard/
+|   `-- app.py                        # Production Streamlit web application
+|-- data/
+|   |-- European_Bank.csv             # 10,000-customer benchmark retail dataset
+|   `-- customer_data.csv             # Auxiliary customer records mirror
+|-- reports/
+|   |-- Pattern_Analytics_Presentation.pptx   # 16-slide PowerPoint deck
+|   |-- Pattern_Analytics_Project_Report.docx # Word enterprise technical report
+|   |-- Pattern_Analytics_Research_Paper.docx # Word IEEE academic research paper
+|   |-- presentation_slides.html              # Interactive browser presentation deck
+|   |-- project_report.html                   # Styled HTML enterprise report
+|   |-- research_paper.html                   # Styled HTML research paper
+|   |-- resume_project_summary.md             # Resume bullet points & interview Q&A
+|   `-- index.html                            # Master deliverables portal
+|-- sql/
+|   |-- schema.sql                    # PostgreSQL table DDL & index constraints
+|   `-- analytics_views.sql           # Production analytical views (GRI, cohorts)
+|-- src/
+|   |-- __init__.py
+|   |-- data_loader.py                # Ingestion & validation module
+|   |-- preprocessing.py              # Cohort binning transformations
+|   |-- segmentation.py               # RFM and demographic clustering logic
+|   |-- analytics.py                  # Core churn formulas & GRI calculation
+|   `-- supabase_client.py            # Database client with local CSV fallback
+|-- requirements.txt                  # Pinned Python package dependencies
+`-- README.md                         # Project documentation
 ```
 
 ---
 
-## 🚀 Quickstart & Local Installation
+## 4. Setup & Local Installation
 
-### 1. Clone the Repository
+### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/your-username/Pattern_Analytics.git
+git clone https://github.com/panchaksharayya12/Pattern_Analytics.git
 cd Pattern_Analytics
 ```
 
-### 2. Create and Activate Virtual Environment
+### Step 2: Configure Virtual Environment
 ```bash
 # Windows
 python -m venv .venv
@@ -158,19 +158,12 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3. Install Dependencies
+### Step 3: Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configure Environment Variables (Optional for Supabase)
-Copy `.env.example` to `.env` if connecting to a live Supabase instance:
-```bash
-cp .env.example .env
-```
-*(Note: If Supabase credentials are not provided, the platform automatically and transparently operates using local high-performance CSV caching).*
-
-### 5. Launch the Streamlit Dashboard
+### Step 4: Run Application
 ```bash
 streamlit run dashboard/app.py
 ```
@@ -178,59 +171,58 @@ Open your browser at `http://localhost:8501`.
 
 ---
 
-## 📊 Interactive Dashboard Modules
+## 5. Interactive Dashboard Architecture
 
-The dashboard features five core interactive analytical modules:
+The dashboard comprises five primary analytical modules:
 
-1. **🧭 Overview (`#overview`):**
-   - High-level executive KPI scorecard displaying analyzed accounts, observed churn percentage, high-value attrition rate, and total capital exposure.
-2. **🌐 Landscape (`#landscape`):**
-   - Sovereign market comparisons across Germany, France, and Spain.
-   - Geographic Risk Index ($GRI$) benchmarks and country-specific capital flight.
-   - Non-linear age gradient analysis (<30, 30–45, 46–60, 60+) and cross-market interaction dynamics.
-3. **🧬 Customer Patterns (`#patterns`):**
-   - The non-linear product bundling hazard curve (identifying the 2-product golden anchor vs. 3+ product churn hazard).
-   - Credit score tier distributions (Low, Medium, High).
-   - Active vs. Inactive account engagement disparity (+88.2% churn multiplier).
+1. **Section 01: Overview (`#overview`)**
+   - Portfolio-level KPI scorecards covering total accounts, benchmark defection, high-value attrition rate, and capital liquidity exposure.
+2. **Section 02: Sovereign Landscape (`#landscape`)**
+   - Cross-border comparative analysis across France, Germany, and Spain.
+   - Geographic Risk Index (GRI) benchmarks and capital loss distribution.
+   - Demographic gradient analysis (<30, 30–45, 46–60, 60+) and market interaction effects.
+3. **Section 03: Customer Patterns (`#patterns`)**
+   - Non-linear product bundling curve isolating the 2-product golden anchor vs. 3+ product cliff.
+   - Credit score categorization (Low, Medium, High).
+   - Digital engagement analysis: active accounts (14.27%) vs. inactive accounts (26.85%).
    - Gender-segmented attrition rates.
-4. **💶 Financial Risk (`#financial-risk`):**
-   - Balance tier churn distributions (Zero Balance, Low Balance, High Balance).
-   - Interactive Estimated Salary vs. Account Balance scatter plot with individual metadata tooltips.
-   - Capital flight analysis: average balance comparison between retained (€72k) and churned (€91k) accounts.
-   - High-Value Customer ($HVC$) capital concentration deep-dive (€83.38M exposure).
-5. **👤 Customer Stories (`#customer-stories`):**
-   - Individual customer drill-down explorer with real-time text search by Customer ID or Surname.
-   - Pre-filtered cohort views: *All Accounts*, *Churned Accounts Only*, *High-Value Accounts*, *High-Value Churners Only*.
-   - One-click CSV cohort export for immediate handoff to regional relationship managers.
-   - Dynamic executive synthesis and priority recommendations.
+4. **Section 04: Financial Risk & Exposure (`#financial-risk`)**
+   - Balance strata distribution (Zero Balance, Low Balance, High Balance).
+   - Capital flight analysis: average balance comparison between retained (€72k) and churned (€91k) depositors.
+   - High-Value Customer ($HVC$) concentration analysis (€83.38M exposure).
+5. **Section 05: Customer Stories Explorer (`#customer-stories`)**
+   - Granular account search by Customer ID or Surname.
+   - Segment-filtered cohort views (All, Churned Only, High-Value Only, High-Value Churners Only).
+   - Real-time CSV cohort download for integration into downstream retention systems.
 
 ---
 
-## 🗄️ Database & Analytical SQL Views
+## 6. Database Views & SQL Schemas
 
-Execute `sql/schema.sql` and `sql/analytics_views.sql` inside the Supabase SQL Editor or any PostgreSQL database to instantiate:
+The database layer includes 7 pre-computed analytical views for rapid reporting:
 
-- `european_bank_customers`: Primary table with foreign keys, check constraints, and performance indexes.
-- `v_executive_portfolio_summary`: Portfolio aggregate metrics.
-- `v_geographic_risk_index`: Real-time calculation of sovereign risk indices.
-- `v_age_segment_churn`: Age cohort churn breakdown.
-- `v_product_penetration_risk`: Product holding hazard curve analysis.
-- `v_high_value_customer_exposure`: Capital flight tracking among high-balance accounts.
-
----
-
-## 📄 Comprehensive Deliverables & Documentation
-
-This repository contains institutional-grade reports ready for stakeholder distribution:
-
-- [📘 Academic Research Paper (reports/research_paper.md)](reports/research_paper.md): Full publication-format paper with literature review, empirical theorems, statistical tables, and academic citations.
-- [📑 Enterprise Project Report (reports/project_report.md)](reports/project_report.md): Technical architecture, data pipeline, and 90-day operational roadmap.
-- [📊 Executive Summary (reports/executive_summary.md)](reports/executive_summary.md): 2-page C-Suite and Board briefing.
-- [🎯 Executive Presentation Deck (reports/presentation_deck.md)](reports/presentation_deck.md): Complete 15-slide presentation deck with speaker notes and visual blueprints.
+- `european_bank_customers`: Primary relation with integrity constraints.
+- `v_executive_portfolio_summary`: Portfolio aggregate metrics and capital flight totals.
+- `v_geographic_risk_index`: Real-time calculation of country risk ratios.
+- `v_age_segment_churn`: Demographic cohort attrition statistics.
+- `v_product_penetration_risk`: Multi-product holding hazard rates.
+- `v_high_value_customer_exposure`: Affluent depositor balance concentration.
 
 ---
 
-## ⚖️ License & Disclaimer
+## 7. Scholarly & Regulatory Citations
 
-- **License:** MIT License. Free for commercial and research applications.
-- **Methodology Disclaimer:** All observed churn metrics and segment differences represent empirical associations within historical microdata. They serve as diagnostic risk indicators rather than deterministic causal relationships.
+1. Boot, A. W. (2000). Relationship banking: What do we know? *Journal of Financial Intermediation*, 9(1), 7–25.
+2. Cohen, M. (2004). Customer retention in retail banking: An empirical study of multi-product relationships. *International Journal of Bank Marketing*, 22(4), 254–271.
+3. Degryse, H., & Ongena, S. (2007). The impact of technology and regulation on the geography of banking. *Oxford Review of Economic Policy*, 23(2), 265–285.
+4. Kim, M., Kliger, D., & Vale, B. (2003). Estimating switching costs: The case of banking. *Journal of Financial Intermediation*, 12(1), 25–56.
+5. Klemperer, P. (1995). Competition when consumers have switching costs. *The Review of Economic Studies*, 62(4), 515–539.
+6. Modigliani, F. (1986). Life cycle, individual thrift, and the wealth of nations. *The American Economic Review*, 76(3), 297–313.
+7. Basel Committee on Banking Supervision (2013). *Basel III: The Liquidity Coverage Ratio and liquidity risk monitoring tools.* Bank for International Settlements (BIS).
+
+---
+
+## 8. License & Terms
+
+- **License:** MIT License. Permitted for research and commercial evaluation.
+- **Analytical Disclaimer:** Observed churn rates and segment disparities represent empirical associations derived from historical microdata and serve as diagnostic risk indicators rather than deterministic causal relations.
