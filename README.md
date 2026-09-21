@@ -14,7 +14,7 @@
 - **Lead Researcher & Systems Architect:** Panchaksharayya
 - **Academic Program:** B.Tech Student in Information Technology (Specialization: Augmented Reality & Virtual Reality)
 - **Primary Contact:** [panchaksharayyas22@gmail.com](mailto:panchaksharayyas22@gmail.com)
-- **Interactive Dashboard:** `http://localhost:8501` (Streamlit runtime)
+- **Interactive Dashboard:** [http://localhost:8501](http://localhost:8501) (Streamlit runtime)
 
 ---
 
@@ -167,7 +167,7 @@ pip install -r requirements.txt
 ```bash
 streamlit run dashboard/app.py
 ```
-Open your browser at `http://localhost:8501`.
+Open your browser at [http://localhost:8501](http://localhost:8501).
 
 ---
 
