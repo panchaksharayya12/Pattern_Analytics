@@ -1,0 +1,7 @@
+app.py
+.venv/
+__pycache__/
+*.pyc
+.git/
+scratch/
+html_test.py

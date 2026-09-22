@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/presentation_slides.html", "destination": "/reports/presentation_slides.html" },
+    { "source": "/project_report.html", "destination": "/reports/project_report.html" },
+    { "source": "/research_paper.html", "destination": "/reports/research_paper.html" },
+    { "source": "/reports", "destination": "/reports/index.html" },
+    { "source": "/reports/", "destination": "/reports/index.html" }
+  ]
+}
